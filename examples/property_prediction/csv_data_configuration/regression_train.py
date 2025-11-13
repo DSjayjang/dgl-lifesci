@@ -154,7 +154,7 @@ if __name__ == '__main__':
                              '(default: None)')
     parser.add_argument('-s', '--split',
                         choices=['scaffold_decompose', 'scaffold_smiles', 'random'],
-                        default='scaffold_smiles',
+                        default='random',
                         help='Dataset splitting method (default: scaffold_smiles). For scaffold '
                              'split based on rdkit.Chem.AllChem.MurckoDecompose, '
                              'use scaffold_decompose. For scaffold split based on '
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     parser.add_argument('-sr', '--split-ratio', default='0.8,0.1,0.1', type=str,
                         help='Proportion of the dataset to use for training, validation and test '
                              '(default: 0.8,0.1,0.1)')
-    parser.add_argument('-me', '--metric', choices=['r2', 'mae', 'rmse'], default='r2',
+    parser.add_argument('-me', '--metric', choices=['r2', 'mae', 'rmse'], default='mae',
                         help='Metric for evaluation (default: r2)')
     parser.add_argument('-mo', '--model', choices=['GCN', 'GAT', 'Weave', 'MPNN', 'AttentiveFP',
                                                    'gin_supervised_contextpred',
